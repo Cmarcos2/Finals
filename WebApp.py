@@ -18,8 +18,8 @@ st.write("""
 name1 = 'Christian Marcos'
 name2 = 'Ji Han Gang'
 # Display the names in bold
-st.markdown(f"**{name1}")
-st.markdown(f"**{name2}")
+st.markdown(f"{name1}")
+st.markdown(f"{name2}")
 # Display the date
 st.write('May 19, 2024')
 file = st.file_uploader("Choose a weather photo from your computer", type=["jpg", "png"])
