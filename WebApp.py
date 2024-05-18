@@ -5,7 +5,7 @@ import tensorflow as tf
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-    model = tf.keras.models.load_model("Finals.keras")  
+    model = tf.keras.models.load_model("Finals_Exam.hdf5")  
     return model
 
 model = load_model()
@@ -13,8 +13,14 @@ model = load_model()
 st.write("""
 # Weather Classification System
 """)
-st.write(f'Christian Marcos & Ji Han Gang')
-st.write(f'May 19, 2024')
+
+# Your names
+name1 = 'Christian Marcos'
+name2 = 'Ji Han Gang'
+# Display the names in bold
+st.markdown(f"**{name1} & {name2}**")
+# Display the date
+st.write('May 19, 2024')
 file = st.file_uploader("Choose a weather photo from your computer", type=["jpg", "png"])
 
 
