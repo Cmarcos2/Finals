@@ -70,8 +70,9 @@ st.markdown('<div class="header main">Final Examination: Weather Classification 
 # Names and Date
 st.markdown('<div class="names main">Christian Marcos | Ji Han Gang | May 19, 2024</div>', unsafe_allow_html=True)
 
-# File uploader
+# File uploader with a placeholder for the message
 st.markdown('<div class="uploader main">Choose a weather photo to predict if it is Shine, Cloudy, Sunrise, or Rain:</div>', unsafe_allow_html=True)
+upload_placeholder = st.empty()  # Placeholder for the message
 file = st.file_uploader("", type=["jpg", "png"])
 
 def import_and_predict(image_data, model):
@@ -85,8 +86,9 @@ def import_and_predict(image_data, model):
     return prediction
 
 if file is None:
-    st.text("Please upload an image file")
+    upload_placeholder.text("Please upload an image file")
 else:
+    upload_placeholder.empty()  # Clear the placeholder
     image = Image.open(file)
     st.image(image, use_column_width=True)
     prediction = import_and_predict(image, model)
