@@ -22,31 +22,31 @@ model = load_model()
 # Custom CSS to style the app
 st.markdown("""
     <style>
+    body {
+        background-color: #e0f7fa;  /* Light cyan background */
+    }
     .main {
-        background-color: #f0f2f6;
+        background-color: #ffffff;
         padding: 20px;
         border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     .header {
         text-align: center;
         font-size: 2em;
         font-weight: bold;
-    }
-    .subheader {
-        text-align: center;
-        font-size: 1.2em;
+        margin-bottom: 20px;
     }
     .names {
         text-align: center;
         font-size: 1.2em;
         font-weight: bold;
-        margin-top: 20px;
+        margin-bottom: 10px;
     }
     .date {
         text-align: center;
         font-size: 1.2em;
         font-weight: bold;
-        margin-top: 10px;
         margin-bottom: 20px;
     }
     .uploader {
@@ -55,17 +55,23 @@ st.markdown("""
         font-weight: bold;
         margin-bottom: 20px;
     }
+    .output {
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: green;
+    }
     </style>
     """, unsafe_allow_html=True)
 
 # Header
-st.markdown('<div class="header">Final Examination: Weather Classification System</div>', unsafe_allow_html=True)
+st.markdown('<div class="header main">Final Examination: Weather Classification System</div>', unsafe_allow_html=True)
 
 # Names and Date
-st.markdown('<div class="names">Christian Marcos | Ji Han Gang | May 19, 2024</div>', unsafe_allow_html=True)
+st.markdown('<div class="names main">Christian Marcos | Ji Han Gang | May 19, 2024</div>', unsafe_allow_html=True)
 
 # File uploader
-st.markdown('<div class="uploader">Choose a weather photo to predict if it is Shine, Cloudy, Sunrise, or Rain:</div>', unsafe_allow_html=True)
+st.markdown('<div class="uploader main">Choose a weather photo to predict if it is Shine, Cloudy, Sunrise, or Rain:</div>', unsafe_allow_html=True)
 file = st.file_uploader("", type=["jpg", "png"])
 
 def import_and_predict(image_data, model):
