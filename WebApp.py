@@ -3,34 +3,87 @@ from PIL import Image, ImageOps
 import streamlit as st
 import tensorflow as tf
 
-@st.cache(allow_output_mutation=True)
+# Load the model with caching to speed up subsequent runs
+@st.cache_resource
 def load_model():
     model = tf.keras.models.load_model("Finals_Exam.hdf5")  
     return model
 
 model = load_model()
 
-st.write("""
-# Final Examination: Weather Classification System
-""")
+# Set the page config
+st.set_page_config(
+    page_title="Weather Classification System",
+    page_icon="⛅",
+    layout="centered",
+    initial_sidebar_state="expanded"
+)
 
-# Your names
-name1 = 'Christian Marcos'
-name2 = 'Ji Han Gang'
-# Display the names in bold
-st.markdown(f"**{name1}**")
-st.markdown(f"**{name2}**")
-# Display the date
-st.write('**May 19, 2024**')
-file = st.file_uploader("**CHOOSE A WEATHER PHOTO FROM YOUR BROWSER**", type=["jpg", "png"])
+# Custom CSS to style the app
+st.markdown("""
+    <style>
+    .main {
+        background-color: #f0f2f6;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .header {
+        text-align: center;
+        font-size: 2em;
+        font-weight: bold;
+    }
+    .subheader {
+        text-align: center;
+        font-size: 1.2em;
+    }
+    .names {
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    .date {
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .uploader {
+        text-align: center;
+        font-size: 1em;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .output {
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: green;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
+# Header
+st.markdown('<div class="header">Final Examination: Weather Classification System</div>', unsafe_allow_html=True)
+
+# Names
+st.markdown('<div class="names">Christian Marcos</div>', unsafe_allow_html=True)
+st.markdown('<div class="names">Ji Han Gang</div>', unsafe_allow_html=True)
+
+# Date
+st.markdown('<div class="date">May 19, 2024</div>', unsafe_allow_html=True)
+
+# File uploader
+st.markdown('<div class="uploader">CHOOSE A WEATHER PHOTO FROM YOUR BROWSER</div>', unsafe_allow_html=True)
+file = st.file_uploader("", type=["jpg", "png"])
 
 def import_and_predict(image_data, model):
     size = (150, 150)
     image = ImageOps.fit(image_data, size)
     img_array = np.asarray(image)
-    img_array = img_array[np.newaxis, ...]  
-    img_array = img_array / 255.0 
+    img_array = img_array[np.newaxis, ...]
+    img_array = img_array / 255.0
 
     prediction = model.predict(img_array)
     return prediction
@@ -44,6 +97,4 @@ else:
     class_labels = ['Cloudy', 'Rain', 'Shine', 'Sunrise']
     predicted_class_index = np.argmax(prediction)
     predicted_class_label = class_labels[predicted_class_index]
-    st.success(f"OUTPUT: {predicted_class_label}")
-
-
+    st.markdown(f'<div class="output">OUTPUT: {predicted_class_label}</div>', unsafe_allow_html=True)
