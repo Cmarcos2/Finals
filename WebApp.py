@@ -23,6 +23,7 @@ model = load_model()
 st.markdown("""
     <style>
      .main {
+        text-align: center;
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -31,7 +32,7 @@ st.markdown("""
         text-align: center;
         font-size: 2em;
         font-weight: bold;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     .names {
         text-align: center;
