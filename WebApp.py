@@ -71,7 +71,7 @@ st.markdown('<div class="header main">Final Examination: Weather Classification 
 st.markdown('<div class="names main">Christian Marcos | Ji Han Gang | May 19, 2024</div>', unsafe_allow_html=True)
 
 # File uploader
-st.markdown('<div class="uploader main">Choose a weather photo to predict if it is Shine, Cloudy, Sunrise, or Rain</div>', unsafe_allow_html=True)
+st.markdown('<div class="uploader main">A Weather Photo Can Predict if it is Shine, Cloudy, Sunrise, or Rain</div>', unsafe_allow_html=True)
 file = st.file_uploader("", type=["jpg", "png"])
 
 def import_and_predict(image_data, model):
