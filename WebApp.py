@@ -31,9 +31,6 @@ st.markdown("""
         text-align: center;
         font-size: 1.5em;
         font-weight: bold;
-        background-color: #cfd8dc;  /* Cloudy color background */
-        padding: 10px;
-        border-radius: 10px;
         margin-bottom: 20px;
     }
     .names {
