@@ -53,7 +53,7 @@ st.markdown("""
         text-align: center;
         font-size: 1em;
         font-weight: bold;
-        margin-bottom: 5px;
+        margin-bottom: 20px; /* Add margin-bottom */
     }
     .file-uploader {
         text-align: center;
@@ -62,8 +62,8 @@ st.markdown("""
     .placeholder {
         font-size: 0.9em;
         color: red;
-        margin-top: -10px; /* Adjust margin-top to bring it closer to the drag and drop area */
-        margin-bottom: 5px;
+        margin-top: -10px; /* Adjust margin-top */
+        margin-bottom: 20px; /* Add margin-bottom */
     }
     .output {
         text-align: center;
@@ -81,8 +81,8 @@ st.markdown('<div class="header main">Final Examination: Weather Classification 
 st.markdown('<div class="names main">Christian Marcos | Ji Han Gang | May 19, 2024</div>', unsafe_allow_html=True)
 
 # File uploader with a placeholder for the message
-st.markdown('<div class="uploader main">Choose a weather photo to predict if it is Shine, Cloudy, Sunrise, or Rain:</div>', unsafe_allow_html=True)
 upload_placeholder = st.empty()  # Placeholder for the message
+st.markdown('<div class="uploader main">Choose a weather photo to predict if it is Shine, Cloudy, Sunrise, or Rain:</div>', unsafe_allow_html=True)
 
 # Wrap the file uploader inside a div and assign a custom class
 file_uploader_div = st.empty()
