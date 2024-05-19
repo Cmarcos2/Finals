@@ -62,7 +62,7 @@ st.markdown("""
 st.markdown('<div class="header main">Final Examination: Weather Classification System</div>', unsafe_allow_html=True)
 
 # Names and Date
-st.markdown('<div class="names main">Christian Marcos | Ji Han Gang | May 19, 2024</div>', unsafe_allow_html=True)
+st.markdown('<div class="names main">Christian Marcos | Ji Han Gang | May 19, 2024 | CPE32S1</div>', unsafe_allow_html=True)
 
 # File uploader
 st.markdown('<div class="uploader main">Explore the weather with a simple photo upload! Our system predicts whether the sky is shine, cloudy, displaying a beautiful sunrise, or experiencing rain. Try it out now!</div>', unsafe_allow_html=True)
