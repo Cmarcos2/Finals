@@ -31,7 +31,7 @@ st.markdown("""
         text-align: center;
         font-size: 2em;
         font-weight: bold;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
     .names {
         text-align: center;
