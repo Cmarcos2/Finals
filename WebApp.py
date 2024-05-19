@@ -62,7 +62,7 @@ st.markdown("""
     .placeholder {
         font-size: 0.9em;
         color: red;
-        margin-top: -5px;
+        margin-top: -10px; /* Adjust margin-top to bring it closer to the drag and drop area */
         margin-bottom: 5px;
     }
     .output {
@@ -81,7 +81,7 @@ st.markdown('<div class="header main">Final Examination: Weather Classification 
 st.markdown('<div class="names main">Christian Marcos | Ji Han Gang | May 19, 2024</div>', unsafe_allow_html=True)
 
 # File uploader with a placeholder for the message
-st.markdown('<div class="uploader main">Choose a weather photo to predict if it is Shine, Cloudy, Sunrise, or Rain:</div>', unsafe_allow_html=True)
+st.markdown('<div class="uploader main">A Weather Photo to Predict if it is Shine, Cloudy, Sunrise, or Rain:</div>', unsafe_allow_html=True)
 upload_placeholder = st.empty()  # Placeholder for the message
 
 # Wrap the file uploader inside a div and assign a custom class
@@ -101,7 +101,7 @@ def import_and_predict(image_data, model):
     return prediction
 
 if file is None:
-    upload_placeholder.markdown('<div class="placeholder" style="margin-top: -10px;">Please upload an image file</div>', unsafe_allow_html=True)
+    upload_placeholder.markdown('<div class="placeholder">Please upload an image file</div>', unsafe_allow_html=True)
 else:
     upload_placeholder.empty()  # Clear the placeholder
     image = Image.open(file)
