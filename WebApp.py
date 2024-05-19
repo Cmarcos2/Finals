@@ -3,14 +3,6 @@ from PIL import Image, ImageOps
 import streamlit as st
 import tensorflow as tf
 
-# Load the model with caching to speed up subsequent runs
-@st.cache_resource
-def load_model():
-    model = tf.keras.models.load_model("Finals_Exam.hdf5")  
-    return model
-
-model = load_model()
-
 # Set the page config
 st.set_page_config(
     page_title="Weather Classification System",
@@ -18,6 +10,14 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="expanded"
 )
+
+# Load the model with caching to speed up subsequent runs
+@st.cache_resource
+def load_model():
+    model = tf.keras.models.load_model("Finals_Exam.hdf5")  
+    return model
+
+model = load_model()
 
 # Custom CSS to style the app
 st.markdown("""
