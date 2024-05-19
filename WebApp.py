@@ -59,7 +59,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Header
-st.markdown('<div class="header main">Final Examination: Weather Classification System</div>', unsafe_allow_html=True)
+st.markdown('<div class="header main">Final Examination: Weather Prediction System</div>', unsafe_allow_html=True)
 
 # Names and Date
 st.markdown('<div class="names main">Christian Marcos | Ji Han Gang | May 19, 2024 | CPE32S1</div>', unsafe_allow_html=True)
