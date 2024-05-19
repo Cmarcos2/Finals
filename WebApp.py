@@ -82,11 +82,9 @@ st.markdown('<div class="names main">Christian Marcos | Ji Han Gang | May 19, 20
 
 # File uploader with a placeholder for the message
 st.markdown('<div class="uploader main">Choose a weather photo to predict if it is Shine, Cloudy, Sunrise, or Rain:</div>', unsafe_allow_html=True)
-
-
+upload_placeholder = st.empty()  # Placeholder for the message
 # Wrap the file uploader inside a div and assign a custom class
 file_uploader_div = st.empty()
-upload_placeholder = st.empty()  # Placeholder for the message
 file_uploader_div.markdown('<div class="file-uploader">', unsafe_allow_html=True)
 file = st.file_uploader("", type=["jpg", "png"], key="file_uploader", label_visibility="collapsed")
 file_uploader_div.markdown('</div>', unsafe_allow_html=True)
