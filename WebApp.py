@@ -22,8 +22,7 @@ model = load_model()
 # Custom CSS to style the app
 st.markdown("""
     <style>
-    body {
-        background-color: #e0f7fa;  /* Light cyan background */
+
     }
     .main {
         background-color: #ffffff;
