@@ -1,4 +1,4 @@
-import numpy as np
+wimport numpy as np
 from PIL import Image, ImageOps
 import streamlit as st
 import tensorflow as tf
@@ -71,7 +71,7 @@ st.markdown('<div class="header">Final Examination: Weather Classification Syste
 st.markdown('<div class="names">Christian Marcos | Ji Han Gang | May 19, 2024</div>', unsafe_allow_html=True)
 
 # File uploader
-st.markdown('<div class="uploader">CHOOSE A WEATHER PHOTO FROM YOUR BROWSER</div>', unsafe_allow_html=True)
+st.markdown('<div class="uploader">Choose a weather photo to predict if it is Shine, Cloudy, Sunrise, or Rain</div>', unsafe_allow_html=True)
 file = st.file_uploader("", type=["jpg", "png"])
 
 def import_and_predict(image_data, model):
