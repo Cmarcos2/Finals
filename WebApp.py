@@ -70,10 +70,6 @@ st.markdown('<div class="header">Final Examination: Weather Classification Syste
 # Names # Date
 st.markdown('<div class="names">Christian Marcos | Ji Han Gang | May 19, 2024</div>', unsafe_allow_html=True)
 
-# File uploader
-st.markdown('<div class="uploader">CHOOSE A WEATHER PHOTO FROM YOUR BROWSER</div>', unsafe_allow_html=True)
-file = st.file_uploader("", type=["jpg", "png"])
-
 def import_and_predict(image_data, model):
     size = (150, 150)
     image = ImageOps.fit(image_data, size)
