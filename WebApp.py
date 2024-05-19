@@ -21,8 +21,8 @@ name2 = 'Ji Han Gang'
 st.markdown(f"**{name1}**")
 st.markdown(f"**{name2}**")
 # Display the date
-st.write('May 19, 2024')
-file = st.file_uploader("Choose a weather photo from your computer", type=["jpg", "png"])
+st.write('**May 19, 2024**')
+file = st.file_uploader("**Choose a weather photo from your computer**", type=["jpg", "png"])
 
 
 def import_and_predict(image_data, model):
