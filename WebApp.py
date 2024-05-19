@@ -89,7 +89,7 @@ file_uploader_div = st.empty()
 file_uploader_div.markdown('<div class="file-uploader">', unsafe_allow_html=True)
 file = st.file_uploader("", type=["jpg", "png"], key="file_uploader", label_visibility="collapsed")
 file_uploader_div.markdown('</div>', unsafe_allow_html=True)
-
+upload_placeholder = st.empty()  # Placeholder for the message
 def import_and_predict(image_data, model):
     size = (150, 150)
     image = ImageOps.fit(image_data, size)
