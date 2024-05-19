@@ -1,4 +1,4 @@
-import numpy as np
+0import numpy as np
 from PIL import Image, ImageOps
 import streamlit as st
 import tensorflow as tf
@@ -67,12 +67,8 @@ st.markdown("""
 # Header
 st.markdown('<div class="header">Final Examination: Weather Classification System</div>', unsafe_allow_html=True)
 
-# Names
-st.markdown('<div class="names">Christian Marcos | Ji Han Gang </div>', unsafe_allow_html=True)
-
-
-# Date
-st.markdown('<div class="date">May 19, 2024</div>', unsafe_allow_html=True)
+# Names # Date
+st.markdown('<div class="names">Christian Marcos | Ji Han Gang | May 19, 2024</div>', unsafe_allow_html=True)
 
 # File uploader
 st.markdown('<div class="uploader">CHOOSE A WEATHER PHOTO FROM YOUR BROWSER</div>', unsafe_allow_html=True)
