@@ -55,12 +55,6 @@ st.markdown("""
         font-weight: bold;
         margin-bottom: 20px;
     }
-    .output {
-        text-align: center;
-        font-size: 1.2em;
-        font-weight: bold;
-        color: green;
-    }
     </style>
     """, unsafe_allow_html=True)
 
@@ -71,7 +65,7 @@ st.markdown('<div class="header">Final Examination: Weather Classification Syste
 st.markdown('<div class="names">Christian Marcos | Ji Han Gang | May 19, 2024</div>', unsafe_allow_html=True)
 
 # File uploader
-st.markdown('<div class="uploader">Choose a weather photo to predict if it is Shine, Cloudy, Sunrise, or Rain</div>', unsafe_allow_html=True)
+st.markdown('<div class="uploader">Choose a weather photo to predict if it is Shine, Cloudy, Sunrise, or Rain:</div>', unsafe_allow_html=True)
 file = st.file_uploader("", type=["jpg", "png"])
 
 def import_and_predict(image_data, model):
@@ -93,4 +87,4 @@ else:
     class_labels = ['Cloudy', 'Rain', 'Shine', 'Sunrise']
     predicted_class_index = np.argmax(prediction)
     predicted_class_label = class_labels[predicted_class_index]
-    st.markdown(f'<div class="output">OUTPUT: {predicted_class_label}</div>', unsafe_allow_html=True)
+    st.success(f'Prediction: {predicted_class_label}')
