@@ -57,12 +57,12 @@ st.markdown("""
     }
     .file-uploader {
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     .placeholder {
         font-size: 0.9em;
         color: red;
-        margin-top: -10px;
+        margin-top: -5px;
         margin-bottom: 5px;
     }
     .output {
@@ -83,7 +83,7 @@ st.markdown('<div class="names main">Christian Marcos | Ji Han Gang | May 19, 20
 # File uploader with a placeholder for the message
 st.markdown('<div class="uploader main">Choose a weather photo to predict if it is Shine, Cloudy, Sunrise, or Rain:</div>', unsafe_allow_html=True)
 upload_placeholder = st.empty()  # Placeholder for the message
-file = st.file_uploader("", type=["jpg", "png"], key="file_uploader", label_visibility="collapsed")
+file = st.file_uploader("", type=["jpg", "png"], key="file_uploader", label_visibility="collapsed", class="file-uploader")
 
 def import_and_predict(image_data, model):
     size = (150, 150)
