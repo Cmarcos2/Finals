@@ -35,26 +35,25 @@ st.markdown("""
         text-align: center;
         font-size: 2em;
         font-weight: bold;
-        background-color: #cfd8dc;  /* Cloudy color background */
-        padding: 10px;
-        border-radius: 10px;
         margin-bottom: 20px;
     }
     .names {
         text-align: center;
         font-size: 1.2em;
         font-weight: bold;
+        margin-bottom: 10px;
     }
     .date {
         text-align: center;
         font-size: 1.2em;
         font-weight: bold;
+        margin-bottom: 20px;
     }
     .uploader {
         text-align: center;
         font-size: 1em;
         font-weight: bold;
-        margin-bottom: 20px; /* Add margin-bottom */
+        margin-bottom: 5px;
     }
     .file-uploader {
         text-align: center;
@@ -63,8 +62,8 @@ st.markdown("""
     .placeholder {
         font-size: 0.9em;
         color: red;
-        margin-top: -10px; /* Adjust margin-top */
-        margin-bottom: 20px; /* Add margin-bottom */
+        margin-top: -10px; /* Adjust margin-top to bring it closer to the drag and drop area */
+        margin-bottom: 5px;
     }
     .output {
         text-align: center;
