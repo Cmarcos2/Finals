@@ -36,7 +36,6 @@ st.markdown("""
     .names {
         text-align: center;
         font-size: 1.2em;
-        font-weight: bold;
         margin-bottom: 10px;
     }
     .date {
