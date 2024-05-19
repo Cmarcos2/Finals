@@ -19,7 +19,7 @@ def load_model():
 
 model = load_model()
 
-# Custom CSS to style the app and adjust the message position
+# Custom CSS to style the app
 st.markdown("""
     <style>
     body {
@@ -35,9 +35,6 @@ st.markdown("""
         text-align: center;
         font-size: 2em;
         font-weight: bold;
-        background-color: #cfd8dc;  /* Cloudy color background */
-        padding: 10px;
-        border-radius: 10px;
         margin-bottom: 20px;
     }
     .names {
@@ -56,17 +53,7 @@ st.markdown("""
         text-align: center;
         font-size: 1em;
         font-weight: bold;
-        margin-bottom: 20px; /* Add margin-bottom */
-    }
-    .file-uploader {
-        text-align: center;
-        margin-bottom: 10px;
-    }
-    .placeholder {
-        font-size: 0.9em;
-        color: red;
-        margin-top: -10px; /* Adjust margin-top */
-        margin-bottom: 20px; /* Add margin-bottom */
+        margin-bottom: 20px;
     }
     .output {
         text-align: center;
@@ -83,15 +70,9 @@ st.markdown('<div class="header main">Final Examination: Weather Classification 
 # Names and Date
 st.markdown('<div class="names main">Christian Marcos | Ji Han Gang | May 19, 2024</div>', unsafe_allow_html=True)
 
-# File uploader with a placeholder for the message
-st.markdown('<div class="uploader main">A Weather Photo Can Predict if it is Shine, Cloudy, Sunrise, or Rain:</div>', unsafe_allow_html=True)
-upload_placeholder = st.empty()  # Placeholder for the message
-
-# Wrap the file uploader inside a div and assign a custom class
-file_uploader_div = st.empty()
-file_uploader_div.markdown('<div class="file-uploader">', unsafe_allow_html=True)
-file = st.file_uploader("", type=["jpg", "png"], key="file_uploader", label_visibility="collapsed")
-file_uploader_div.markdown('</div>', unsafe_allow_html=True)
+# File uploader
+st.markdown('<div class="uploader main">Choose a weather photo to predict if it is Shine, Cloudy, Sunrise, or Rain</div>', unsafe_allow_html=True)
+file = st.file_uploader("", type=["jpg", "png"])
 
 def import_and_predict(image_data, model):
     size = (150, 150)
@@ -104,9 +85,8 @@ def import_and_predict(image_data, model):
     return prediction
 
 if file is None:
-    upload_placeholder.markdown('<div class="placeholder">Please upload an image file</div>', unsafe_allow_html=True)
+    st.text("Please upload an image file")
 else:
-    upload_placeholder.empty()  # Clear the placeholder
     image = Image.open(file)
     st.image(image, use_column_width=True)
     prediction = import_and_predict(image, model)
