@@ -29,7 +29,7 @@ st.markdown("""
     }
     .header {
         text-align: center;
-        font-size: 1.2em;
+        font-size: 1.5em;
         font-weight: bold;
         margin-bottom: 20px;
     }
