@@ -60,7 +60,6 @@ st.markdown("""
         margin-bottom: 20px;
     }
     .placeholder {
-        text-align: center;
         font-size: 0.9em;
         color: red;
         margin-top: -10px;
