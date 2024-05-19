@@ -48,7 +48,6 @@ st.markdown("""
     .uploader {
         text-align: center;
         font-size: 1em;
-        font-weight: bold;
         margin-bottom: 20px;
     }
     .output {
