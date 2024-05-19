@@ -101,7 +101,7 @@ def import_and_predict(image_data, model):
     return prediction
 
 if file is None:
-    upload_placeholder.markdown('<div class="placeholder">Please upload an image file</div>', unsafe_allow_html=True)
+    upload_placeholder.markdown('<div class="placeholder" style="margin-top: -10px;">Please upload an image file</div>', unsafe_allow_html=True)
 else:
     upload_placeholder.empty()  # Clear the placeholder
     image = Image.open(file)
