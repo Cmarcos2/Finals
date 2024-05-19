@@ -11,7 +11,7 @@ def load_model():
 model = load_model()
 
 st.write("""
-# Weather Classification System
+# Final Examination: Weather Classification System
 """)
 
 # Your names
@@ -22,7 +22,7 @@ st.markdown(f"**{name1}**")
 st.markdown(f"**{name2}**")
 # Display the date
 st.write('**May 19, 2024**')
-file = st.file_uploader("**Choose a weather photo from your computer**", type=["jpg", "png"])
+file = st.file_uploader("**CHOOSE A WEATHER PHOTO FROM YOUR BROWSER**", type=["jpg", "png"])
 
 
 def import_and_predict(image_data, model):
