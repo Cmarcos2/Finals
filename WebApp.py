@@ -61,10 +61,10 @@ st.markdown("""
     }
     .placeholder {
         text-align: center;
-        font-size: 1em;
+        font-size: 0.9em;
         color: red;
-        margin-top: -15px;
-        margin-bottom: 10px;
+        margin-top: -10px;
+        margin-bottom: 5px;
     }
     .output {
         text-align: center;
