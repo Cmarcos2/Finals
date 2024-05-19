@@ -23,14 +23,13 @@ model = load_model()
 st.markdown("""
     <style>
      .main {
-        text-align: center;
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     .header {
         text-align: center;
-        font-size: 2em;
+        font-size: 1.2em;
         font-weight: bold;
         margin-bottom: 20px;
     }
@@ -56,7 +55,7 @@ st.markdown("""
         text-align: center;
         font-size: 1.2em;
         font-weight: bold;
-        color: green;
+        color: blue;
     }
     </style>
     """, unsafe_allow_html=True)
