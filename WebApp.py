@@ -14,7 +14,7 @@ st.set_page_config(
 # Load the model with caching to speed up subsequent runs
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model("Finals_Exam.hdf5")  
+    model = tf.keras.models.load_model("Finals_Exam.hdf5")
     return model
 
 model = load_model()
@@ -67,8 +67,12 @@ st.markdown("""
 # Header
 st.markdown('<div class="header">Final Examination: Weather Classification System</div>', unsafe_allow_html=True)
 
-# Names # Date
+# Names and Date
 st.markdown('<div class="names">Christian Marcos | Ji Han Gang | May 19, 2024</div>', unsafe_allow_html=True)
+
+# File uploader
+st.markdown('<div class="uploader">CHOOSE A WEATHER PHOTO FROM YOUR BROWSER</div>', unsafe_allow_html=True)
+file = st.file_uploader("", type=["jpg", "png"])
 
 def import_and_predict(image_data, model):
     size = (150, 150)
