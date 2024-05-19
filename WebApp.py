@@ -22,7 +22,6 @@ model = load_model()
 # Custom CSS to style the app
 st.markdown("""
     <style>
-        }
     .main {
         background-color: #ffffff;
         padding: 20px;
@@ -68,6 +67,9 @@ st.markdown('<div class="header main">Final Examination: Weather Classification 
 # Names and Date
 st.markdown('<div class="names main">Christian Marcos | Ji Han Gang | May 19, 2024</div>', unsafe_allow_html=True)
 
+# Message
+st.text("Please upload an image file")
+
 # File uploader
 st.markdown('<div class="uploader main">A Weather Photo Can Predict if it is Shine, Cloudy, Sunrise, or Rain</div>', unsafe_allow_html=True)
 file = st.file_uploader("", type=["jpg", "png"])
@@ -82,9 +84,7 @@ def import_and_predict(image_data, model):
     prediction = model.predict(img_array)
     return prediction
 
-if file is None:
-    st.text("Please upload an image file")
-else:
+if file is not None:
     image = Image.open(file)
     st.image(image, use_column_width=True)
     prediction = import_and_predict(image, model)
