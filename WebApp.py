@@ -69,10 +69,9 @@ st.markdown('<div class="names main">Christian Marcos | Ji Han Gang | May 19, 20
 
 # File uploader
 st.markdown('<div class="uploader main">A Weather Photo Can Predict if it is Shine, Cloudy, Sunrise, or Rain</div>', unsafe_allow_html=True)
-file = st.file_uploader("", type=["jpg", "png"])
-
 # Message
 st.text("Please upload an image file")
+file = st.file_uploader("", type=["jpg", "png"])
 
 def import_and_predict(image_data, model):
     size = (150, 150)
