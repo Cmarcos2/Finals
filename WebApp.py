@@ -19,7 +19,7 @@ def load_model():
 
 model = load_model()
 
-# Custom CSS to style the app
+# Custom CSS to style the app and adjust the message position
 st.markdown("""
     <style>
     body {
@@ -53,7 +53,18 @@ st.markdown("""
         text-align: center;
         font-size: 1em;
         font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .file-uploader {
+        text-align: center;
         margin-bottom: 20px;
+    }
+    .placeholder {
+        text-align: center;
+        font-size: 1em;
+        color: red;
+        margin-top: -15px;
+        margin-bottom: 10px;
     }
     .output {
         text-align: center;
@@ -73,7 +84,7 @@ st.markdown('<div class="names main">Christian Marcos | Ji Han Gang | May 19, 20
 # File uploader with a placeholder for the message
 st.markdown('<div class="uploader main">Choose a weather photo to predict if it is Shine, Cloudy, Sunrise, or Rain:</div>', unsafe_allow_html=True)
 upload_placeholder = st.empty()  # Placeholder for the message
-file = st.file_uploader("", type=["jpg", "png"])
+file = st.file_uploader("", type=["jpg", "png"], key="file_uploader", label_visibility="collapsed")
 
 def import_and_predict(image_data, model):
     size = (150, 150)
@@ -86,7 +97,7 @@ def import_and_predict(image_data, model):
     return prediction
 
 if file is None:
-    upload_placeholder.text("Please upload an image file")
+    upload_placeholder.markdown('<div class="placeholder">Please upload an image file</div>', unsafe_allow_html=True)
 else:
     upload_placeholder.empty()  # Clear the placeholder
     image = Image.open(file)
